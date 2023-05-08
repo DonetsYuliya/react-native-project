@@ -42,6 +42,7 @@ const RegistrationScreen = ({ navigation }) => {
     );
     setState({ ...initialState });
     setVisibility({ hide: true, text: "To show" });
+    navigation.navigate("Home");
   };
 
   return (
@@ -49,7 +50,7 @@ const RegistrationScreen = ({ navigation }) => {
       <View style={styles.container}>
         <ImageBackground
           style={styles.imgBg}
-          source={require("../assets/photo-bg.jpg")}
+          source={require("../../assets/photo-bg.jpg")}
         >
           <View style={styles.form}>
             <View style={styles.avatar}>
@@ -58,7 +59,7 @@ const RegistrationScreen = ({ navigation }) => {
                   styles.imgAvatar,
                   { display: showAvatar ? "flex" : "none" },
                 ]}
-                source={require("../assets/cat1.png")}
+                source={require("../../assets/cat1.png")}
               />
               <TouchableOpacity
                 style={[
@@ -109,11 +110,9 @@ const RegistrationScreen = ({ navigation }) => {
             <TouchableOpacity style={styles.btn} onPress={onLogin}>
               <Text style={styles.btnText}>REGISTER</Text>
             </TouchableOpacity>
-            <Text
-              style={styles.link}
-              onPress={() => navigation.navigate("Login")}
-            >
-              Already have an account? Sign in
+            <Text style={styles.link}>
+              Already have an account?{" "}
+              <Text onPress={() => navigation.navigate("Login")}>Sign in</Text>
             </Text>
           </View>
         </ImageBackground>
